@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="MSC_UWP_AdaptiveUI_Samples.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MSC_UWP_AdaptiveUI_Samples"
+    RequestedTheme="Light">
+
+</Application>

@@ -1,0 +1,156 @@
+﻿<Page
+    x:Class="Demo0.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Demo0"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Tablet">
+                    <VisualState.Setters>
+                        <Setter Target="Email.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="Email.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="Email.(Grid.Column)"
+                                Value="0" />
+                        <Setter Target="Predmet.(Grid.Row)"
+                                Value="3" />
+                        <Setter Target="Posalji.(Grid.Row)"
+                                Value="4" />
+                        <Setter Target="Prezime.(Grid.ColumnSpan)"
+                                Value="2" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Mobile">
+                    <VisualState.Setters>
+                        <Setter Target="Ime.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="Prezime.(Grid.Row)"
+                                Value="2" />
+                        <Setter Target="Prezime.(Grid.Column)"
+                                Value="0" />
+                        <Setter Target="Prezime.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="Email.(Grid.Row)"
+                                Value="3" />
+                        <Setter Target="Email.(Grid.Column)"
+                                Value="0" />
+                        <Setter Target="Email.(Grid.ColumnSpan)"
+                                Value="3" />
+                        <Setter Target="Predmet.(Grid.Row)"
+                                Value="4" />
+                        <Setter Target="Posalji.(Grid.Row)"
+                                Value="5" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ScrollViewer>
+            <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock FontSize="36"
+                   Text="Kontakt forma"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Grid.ColumnSpan="3"
+                   Margin="8"
+                   Foreground="DarkCyan" />
+
+        <StackPanel Name="Ime"
+                    Margin="8"
+                    Grid.Column="0"
+                    Grid.Row="1">
+
+            <TextBlock Text="Vaše ime:"
+                       FontSize="26"
+                       Margin="0,0,0,4" />
+
+            <TextBox FontSize="26" />
+        </StackPanel>
+
+        <StackPanel Name="Prezime"
+                    Margin="8"
+                    Grid.Column="1"
+                    Grid.Row="1">
+
+            <TextBlock Text="Vaše prezime:"
+                       FontSize="26"
+                       Margin="0,0,0,4" />
+
+            <TextBox FontSize="26" />
+        </StackPanel>
+
+        <StackPanel Name="Email"
+                    Margin="8"
+                    Grid.Column="2"
+                    Grid.Row="1">
+
+            <TextBlock Text="Email:"
+                       FontSize="26"
+                       Margin="0,0,0,4" />
+
+            <TextBox FontSize="26" />
+        </StackPanel>
+
+        <StackPanel Name="Predmet"
+                    Margin="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="2">
+
+            <TextBlock Text="Predmet:"
+                       FontSize="26"
+                       Margin="0,0,0,4" />
+
+            <TextBox FontSize="26" />
+        </StackPanel>
+
+        <StackPanel Name="Posalji"
+                    Margin="8"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3">
+
+            <Button Content="Posalji email"
+                    HorizontalAlignment="Stretch"
+                    Background="DarkCyan"
+                    FontSize="22"
+                    Foreground="White" />
+
+        </StackPanel>
+    </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
